@@ -3,8 +3,14 @@
 # UniKP
 
 <!-- Add buttons here -->
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/navendu-pottekkat/awesome-readme?include_prereleases)
+![GitHub last commit](https://img.shields.io/badge/Last%20commit-May-critical)
+![GitHub issues](https://img.shields.io/github/issues-raw/navendu-pottekkat/awesome-readme)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/navendu-pottekkat/awesome-readme)
+![GitHub](https://img.shields.io/badge/license-gpl--3.0-informational)
 
 <!-- Describe your project in brief -->
+Accurate enzyme kinetic parameters prediction enables optimization of reaction conditions, increasing catalytic efficiency, yield and specificity, and improving overall process economics in enzyme-dependent industries such as pharmaceuticals, food, and chemicals.The lack of a unified framework and reliable prediction tools capable of handling diverse tasks limits their practical application in numerous fields, where accurate predictions of enzyme properties can significantly impact research outcomes.Here, we introduced UniKP, a unified framework based on pretrained language models for highly accurate enzyme ***k*<sub>cat</sub>, *K*<sub>m</sub>** and ***k*<sub>cat</sub> / *K*<sub>m</sub>** prediction from protein sequences and substrate structures.
 
 <!-- The project title should be self explanotory and try not to make it a mouthful. (Although exceptions exist- **awesome-readme-writing-guide-for-open-source-projects** - would have been a cool name)
 
