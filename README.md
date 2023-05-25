@@ -85,6 +85,16 @@ To use this project, first clone the repo on your device using the command below
 
 # Usage
 [(Back to top)](#table-of-contents)
+- **For users who want to use the deep learning model for prediction, please run these command lines at the terminal:**
+  - (1). Download the UniKP package
+  
+         git clone https://github.com/Luo-SynBioLab/UniKP
+  
+  - (2). Download required Python package
+  
+         pip install numpy pandas PyTorch v1.10.1+cu113
+ 
+
 - Example for how to predict enzyme turnover number from enzyme sequences and substrate structures by language model, UniKP:
 ```
 import torch
@@ -106,7 +116,7 @@ def smiles_to_vec(Smiles):
     eos_index = 2
     sos_index = 3
     mask_index = 4
-    vocab = WordVocab.load_vocab('vocab.pkl')
+    vocab = WordVocab.load_vocab('UniKP/vocab.pkl')
     def get_inputs(sm):
         seq_len = 220
         sm = sm.split()
@@ -127,7 +137,7 @@ def smiles_to_vec(Smiles):
             x_seg.append(b)
         return torch.tensor(x_id), torch.tensor(x_seg)
     trfm = TrfmSeq2seq(len(vocab), 256, len(vocab), 4)
-    trfm.load_state_dict(torch.load('trfm_12_23000.pkl'))
+    trfm.load_state_dict(torch.load('UniKP/trfm_12_23000.pkl'))
     trfm.eval()
     x_split = [split(sm) for sm in Smiles]
     xid, xseg = get_array(x_split)
@@ -136,6 +146,9 @@ def smiles_to_vec(Smiles):
 
 
 def Seq_to_vec(Sequence):
+    for i in range(len(Sequence)):
+        if len(Sequence[i]) > 1000:
+            Sequence[i] = Sequence[i][:500] + Sequence[i][-500:]
     sequences_Example = []
     for i in range(len(Sequence)):
         zj = ''
@@ -143,8 +156,8 @@ def Seq_to_vec(Sequence):
             zj += Sequence[i][j] + ' '
         zj += Sequence[i][-1]
         sequences_Example.append(zj)
-    tokenizer = T5Tokenizer.from_pretrained("prot_t5_xl_uniref50", do_lower_case=False)
-    model = T5EncoderModel.from_pretrained("prot_t5_xl_uniref50")
+    tokenizer = T5Tokenizer.from_pretrained("UniKP/prot_t5_xl_uniref50", do_lower_case=False)
+    model = T5EncoderModel.from_pretrained("UniKP/prot_t5_xl_uniref50")
     gc.collect()
     print(torch.cuda.is_available())
     # 'cuda:0' if torch.cuda.is_available() else
