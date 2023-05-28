@@ -231,12 +231,20 @@ Ideally, you should keep the README simple. If you need to add more complex expl
 # Contribute
 [(Back to top)](#table-of-contents)
 
+ * <b>Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences, Shenzhen 518055, China:</b><br/>
+ 
+| Han Yu       |      Huaxiang Deng  |  Jiahui He| Jay D. Keasling | Xiaozhou Luo |
+|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
+<!-- | <img width=120/ src="https://github.com/agemagician/ProtTrans/blob/master/images/ElnaggarAhmend.jpg?raw=true"> | <img width=120/ src="https://github.com/agemagician/ProtTrans/blob/master/images/MichaelHeinzinger-2.jpg?raw=true"> | <img width=120/ src="https://github.com/agemagician/ProtTrans/blob/master/images/christiandallago.png?raw=true"> | <img width=120/ src="https://github.com/agemagician/ProtTrans/blob/master/images/female.png?raw=true"> | <img width=120/ src="https://github.com/agemagician/ProtTrans/blob/master/images/B.Rost.jpg?raw=true"> | -->
+
 <!-- This is where you can let people know how they can **contribute** to your project. Some of the ways are given below.
 
 Also this shows how you can add subsections within a section. -->
 
 ### Sponsor
 [(Back to top)](#table-of-contents)
+
+We would like to acknowledge the support from National Key R&D Program of China (2018YFA0903200), National Natural Science Foundation of China (32071421), Guangdong Basic and Applied Basic Research Foundation (2021B1515020049), Shenzhen Science and Technology Program (ZDSYS20210623091810032 and JCYJ20220531100207017), and Shenzhen Institute of Synthetic Biology Scientific Research Program (ZTXM20203001).
 
 <!-- Your project is gaining traction and it is being used by thousands of people(***with this README there will be even more***). Now it would be a good time to look for people or organisations to sponsor your project. This could be because you are not generating any revenue from your project and you require money for keeping the project alive.
 
@@ -268,6 +276,10 @@ I personally add the name of the license and provide a link to it like below. --
 
 # Footer
 [(Back to top)](#table-of-contents)
+
+If you use this code or our models for your publication, please cite the original paper:
+
+Han Yu, Huaxiang Deng, Jiahui He et al. Highly accurate enzyme turnover number prediction and enzyme engineering with PreKcat, 18 May 2023, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-2749688/v1]
 
 <!-- Let's also add a footer because I love footers and also you **can** use this to convey important info.
 
