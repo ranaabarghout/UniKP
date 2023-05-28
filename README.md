@@ -57,7 +57,7 @@ Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README
 Notice:
 - You need install pretrained protein language modoel *ProtT5-XL-UniRef50* to generate enzyme representation, the link is provided on [ProtT5-XL-U50](https://github.com/agemagician/ProtTrans#models).
 - You need install pretrained molecular language modoel *SMILES Transformer* to generate substrate representation, the link is provided on [SMILES Transformer](https://github.com/DSPsleeporg/smiles-transformer).
-- You also need install modoel *PreKcat_model* to predict, the link is provided on [PreKcat_model](https://huggingface.co/HanselYu/PreKcat).
+- You also need install model *UniKP* for ***k*<sub>cat</sub>, *K*<sub>m</sub>** and ***k*<sub>cat</sub> / *K*<sub>m</sub>** to predict corresponding kinetic parameters, the link is provided on [UniKP_model](https://huggingface.co/HanselYu/UniKP).
 
 other packages:
 - Python v3.6.9 (Anaconda installation recommended)
@@ -95,7 +95,7 @@ To use this project, first clone the repo on your device using the command below
          pip install numpy pandas PyTorch v1.10.1+cu113
  
 
-- Example for how to predict enzyme turnover number from enzyme sequences and substrate structures by language model, UniKP:
+- Example for how to predict enzyme kinetic parameters from enzyme sequences and substrate structures by language model, UniKP:
 ```
 import torch
 from build_vocab import WordVocab
@@ -197,13 +197,22 @@ if __name__ == '__main__':
     seq_vec = Seq_to_vec(sequences)
     smiles_vec = smiles_to_vec(Smiles)
     fused_vector = np.concatenate((smiles_vec, seq_vec), axis=1)
-    with open('PreKcat_new/PreKcat_model.pkl', "rb") as f:
+    
+    # For kcat
+    with open('UniKP/UniKP for kcat.pkl', "rb") as f:
         model = pickle.load(f)
+    # For Km
+    # with open('UniKP/UniKP for Km.pkl', "rb") as f:
+    #     model = pickle.load(f)
+    # For kcat/Km
+    # with open('UniKP/UniKP for kcat_Km.pkl', "rb") as f:
+    #     model = pickle.load(f)
+    
     Pre_label = model.predict(fused_vector)
     Pre_label_pow = [math.pow(10, Pre_label[i]) for i in range(len(Pre_label))]
     print(len(Pre_label))
     res = pd.DataFrame({'sequences': sequences, 'Smiles': Smiles, 'Pre_label': Pre_label})
-    res.to_excel('PreKcat_predicted_label.xlsx')
+    res.to_excel('Kinetic_parameters_predicted_label.xlsx')
 ```
 
 <!-- This is optional and it is used to give the user info on how to use the project after installation. This could be added in the Installation section also. -->
