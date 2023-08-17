@@ -101,7 +101,9 @@ import torch
 from build_vocab import WordVocab
 from pretrain_trfm import TrfmSeq2seq
 from utils import split
+# build_vocab, pretrain_trfm, utils packages are from SMILES Transformer
 from transformers import T5EncoderModel, T5Tokenizer
+# transformers package is from ProtTrans
 import re
 import gc
 import numpy as np
