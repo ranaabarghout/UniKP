@@ -96,6 +96,7 @@ To use this project, first clone the repo on your device using the command below
 
   - (3). Download required Python package
          
+         cd UniKP
          pip install -r requirements.txt   
 
 - Example for how to predict enzyme kinetic parameters from enzyme sequences and substrate structures by language model, UniKP:
