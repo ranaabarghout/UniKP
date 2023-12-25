@@ -10,9 +10,11 @@
 ![GitHub](https://img.shields.io/badge/license-gpl--3.0-informational)
 
 <!-- Describe your project in brief -->
+**Feel free to contact me via email at yuhanid147@gmail.com if you encounter any issues or have any questions.**
+
 **Introduction of UniKP.**
 
-Accurate enzyme kinetic parameters prediction enables optimization of reaction conditions, increasing catalytic efficiency, yield and specificity, and improving overall process economics in enzyme-dependent industries such as pharmaceuticals, food, and chemicals.The lack of a unified framework and reliable prediction tools capable of handling diverse tasks limits their practical application in numerous fields, where accurate predictions of enzyme properties can significantly impact research outcomes.Here, we introduced UniKP, a unified framework based on pretrained language models for highly accurate enzyme ***k*<sub>cat</sub>, *K*<sub>m</sub>** and ***k*<sub>cat</sub> / *K*<sub>m</sub>** prediction from protein sequences and substrate structures.
+Prediction of enzyme kinetic parameters is essential for designing and optimizing enzymes for various biotechnological and industrial applications, but the limited performance of current prediction tools on diverse tasks hinders their practical applications. Here, we introduce UniKP, a unified framework based on pretrained language models for the prediction of enzyme kinetic parameters, including enzyme turnover number (*k*<sub>cat</sub>), Michaelis constant (*K*<sub>m</sub>), and catalytic efficiency (*k*<sub>cat</sub> / *K*<sub>m</sub>), from protein sequences and substrate structures. A two-layer framework derived from UniKP (EF-UniKP) has also been proposed to allow robust *k*<sub>cat</sub> prediction in considering environmental factors, including pH and temperature. In addition, four representative re-weighting methods are systematically explored to successfully reduce the prediction error in high-value prediction tasks. We have demonstrated the application of UniKP and EF-UniKP in several enzyme discovery and directed evolution tasks, leading to the identification of new enzymes and enzyme mutants with higher activity. UniKP is a valuable tool for deciphering the mechanisms of enzyme kinetics and enables novel insights into enzyme engineering and their industrial applications.
 
 **Here is the framework of UniKP.**
 <p align="center">
@@ -280,6 +282,10 @@ I personally add the name of the license and provide a link to it like below. --
 [(Back to top)](#table-of-contents)
 
 If you use this code or our models for your publication, please cite the original paper:
+
+Yu, H., Deng, H., He, J. et al. UniKP: a unified framework for the prediction of enzyme kinetic parameters. Nat Commun 14, 8211 (2023). [https://doi.org/10.1038/s41467-023-44113-1]
+
+The preprint version:
 
 Han Yu, Huaxiang Deng, Jiahui He et al. Highly accurate enzyme turnover number prediction and enzyme engineering with PreKcat, 18 May 2023, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-2749688/v1]
 
