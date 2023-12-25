@@ -44,7 +44,7 @@ Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README
 - [UniKP](#unikp)
 - [Demo-Preview](#demo-preview)
 - [Table of contents](#table-of-contents)
-- [Installation](#installation)
+- [Prerequisites](#prerequisites)
 - [Usage](#usage)
 - [Development](#development)
 - [Contribute](#contribute)
@@ -53,7 +53,7 @@ Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README
 - [License](#license)
 - [Footer](#footer)
 
-# Installation
+# Prerequisites
 [(Back to top)](#table-of-contents)
 
 Notice:
