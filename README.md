@@ -61,8 +61,6 @@ Notice:
 - You need install pretrained molecular language modoel *SMILES Transformer* to generate substrate representation, the link is provided on [SMILES Transformer](https://github.com/DSPsleeporg/smiles-transformer).
 - You also need install model *UniKP* for ***k*<sub>cat</sub>, *K*<sub>m</sub>** and ***k*<sub>cat</sub> / *K*<sub>m</sub>** to predict corresponding kinetic parameters, the link is provided on [UniKP_model](https://huggingface.co/HanselYu/UniKP).
 
-You should ensure these packages are included.
-
 
 <!-- *You might have noticed the **Back to top** button(if not, please notice, it's right there!). This is a good idea because it makes your README **easy to navigate.*** 
 
@@ -121,7 +119,7 @@ def smiles_to_vec(Smiles):
     eos_index = 2
     sos_index = 3
     mask_index = 4
-    vocab = WordVocab.load_vocab('UniKP/vocab.pkl')
+    vocab = WordVocab.load_vocab('vocab.pkl')
     def get_inputs(sm):
         seq_len = 220
         sm = sm.split()
@@ -142,7 +140,7 @@ def smiles_to_vec(Smiles):
             x_seg.append(b)
         return torch.tensor(x_id), torch.tensor(x_seg)
     trfm = TrfmSeq2seq(len(vocab), 256, len(vocab), 4)
-    trfm.load_state_dict(torch.load('UniKP/trfm_12_23000.pkl'))
+    trfm.load_state_dict(torch.load('trfm_12_23000.pkl'))
     trfm.eval()
     x_split = [split(sm) for sm in Smiles]
     xid, xseg = get_array(x_split)
@@ -161,8 +159,8 @@ def Seq_to_vec(Sequence):
             zj += Sequence[i][j] + ' '
         zj += Sequence[i][-1]
         sequences_Example.append(zj)
-    tokenizer = T5Tokenizer.from_pretrained("UniKP/prot_t5_xl_uniref50", do_lower_case=False)
-    model = T5EncoderModel.from_pretrained("UniKP/prot_t5_xl_uniref50")
+    tokenizer = T5Tokenizer.from_pretrained("prot_t5_xl_uniref50", do_lower_case=False)
+    model = T5EncoderModel.from_pretrained("prot_t5_xl_uniref50")
     gc.collect()
     print(torch.cuda.is_available())
     # 'cuda:0' if torch.cuda.is_available() else
