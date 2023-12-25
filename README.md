@@ -61,11 +61,8 @@ Notice:
 - You need install pretrained molecular language modoel *SMILES Transformer* to generate substrate representation, the link is provided on [SMILES Transformer](https://github.com/DSPsleeporg/smiles-transformer).
 - You also need install model *UniKP* for ***k*<sub>cat</sub>, *K*<sub>m</sub>** and ***k*<sub>cat</sub> / *K*<sub>m</sub>** to predict corresponding kinetic parameters, the link is provided on [UniKP_model](https://huggingface.co/HanselYu/UniKP).
 
-other packages:
-- Python v3.7.17 (Anaconda installation recommended)
-- PyTorch v1.10.1+cu113
-- pandas v1.1.5
-- NumPy v1.19.5
+You should ensure these packages are included.
+
 
 <!-- *You might have noticed the **Back to top** button(if not, please notice, it's right there!). This is a good idea because it makes your README **easy to navigate.*** 
 
