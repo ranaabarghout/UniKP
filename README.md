@@ -166,6 +166,7 @@ def Seq_to_vec(Sequence):
             zj += Sequence[i][j] + ' '
         zj += Sequence[i][-1]
         sequences_Example.append(zj)
+    ###### you should place downloaded model into this directory.
     tokenizer = T5Tokenizer.from_pretrained("prot_t5_xl_uniref50", do_lower_case=False)
     model = T5EncoderModel.from_pretrained("prot_t5_xl_uniref50")
     gc.collect()
@@ -207,7 +208,8 @@ if __name__ == '__main__':
     seq_vec = Seq_to_vec(sequences)
     smiles_vec = smiles_to_vec(Smiles)
     fused_vector = np.concatenate((smiles_vec, seq_vec), axis=1)
-    
+
+    ###### you should place downloaded model into this directory.
     # For kcat
     with open('UniKP/UniKP for kcat.pkl', "rb") as f:
         model = pickle.load(f)
