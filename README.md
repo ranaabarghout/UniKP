@@ -16,7 +16,7 @@ Accurate enzyme kinetic parameters prediction enables optimization of reaction c
 
 **Here is the framework of UniKP.**
 <p align="center">
-  <img  src="Figures/UniKP.jpg" >
+  <img  src="Figures/UniKP.png" >
 </p>
 
 # Demo-Preview
