@@ -62,7 +62,7 @@ Notice:
 - You also need install model *UniKP* for ***k*<sub>cat</sub>, *K*<sub>m</sub>** and ***k*<sub>cat</sub> / *K*<sub>m</sub>** to predict corresponding kinetic parameters, the link is provided on [UniKP_model](https://huggingface.co/HanselYu/UniKP).
 
 other packages:
-- Python v3.6.9 (Anaconda installation recommended)
+- Python v3.7.17 (Anaconda installation recommended)
 - PyTorch v1.10.1+cu113
 - pandas v1.1.5
 - NumPy v1.19.5
@@ -92,10 +92,14 @@ To use this project, first clone the repo on your device using the command below
   
          git clone https://github.com/Luo-SynBioLab/UniKP
   
-  - (2). Download required Python package
+  - (2). Create and activate enviroment
   
-         pip install numpy pandas PyTorch v1.10.1+cu113
- 
+         conda create -n Uni_test python=3.7
+         conda activate Uni_test
+
+  - (3). Download required Python package
+         
+         pip install -r requirements.txt   
 
 - Example for how to predict enzyme kinetic parameters from enzyme sequences and substrate structures by language model, UniKP:
 ```
