@@ -57,7 +57,7 @@ Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README
 [(Back to top)](#table-of-contents)
 
 Notice:
-- You need install pretrained protein language modoel *ProtT5-XL-UniRef50* to generate enzyme representation, the link is provided on [ProtT5-XL-U50](https://github.com/agemagician/ProtTrans#models).
+- You need install pretrained protein language modoel *ProtT5-XL-UniRef50* to generate enzyme representation, the link is provided on [ProtT5-XL-U50](https://zenodo.org/records/4644188).
 - You need install pretrained molecular language modoel *SMILES Transformer* to generate substrate representation, the link is provided on [SMILES Transformer](https://github.com/DSPsleeporg/smiles-transformer).
 - You also need install model *UniKP* for ***k*<sub>cat</sub>, *K*<sub>m</sub>** and ***k*<sub>cat</sub> / *K*<sub>m</sub>** to predict corresponding kinetic parameters, the link is provided on [UniKP_model](https://huggingface.co/HanselYu/UniKP).
 
