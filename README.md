@@ -97,7 +97,7 @@ To use this project, first clone the repo on your device using the command below
   - (3). Download required Python package
          
          cd UniKP
-         pip3 install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+         pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu113
          pip install -r requirements.txt   
 
 - Example for how to predict enzyme kinetic parameters from enzyme sequences and substrate structures by language model, UniKP:
