@@ -1,4 +1,4 @@
-import torch
+import torch # type: ignore
 from build_vocab import WordVocab
 from pretrain_trfm import TrfmSeq2seq
 from utils import split
@@ -17,6 +17,14 @@ from sklearn.model_selection import train_test_split
 import random
 import pickle
 import math
+
+
+print(f"CUDA available: {torch.cuda.is_available()}")
+print(f"CUDA device count: {torch.cuda.device_count()}")
+if torch.cuda.is_available():
+    print(f"Current CUDA device: {torch.cuda.current_device()}")
+    print(f"CUDA device name: {torch.cuda.get_device_name(0)}")
+
 
 
 def smiles_to_vec(Smiles):
@@ -68,10 +76,22 @@ def Seq_to_vec(Sequence):
     tokenizer = T5Tokenizer.from_pretrained("prot_t5_xl_uniref50", do_lower_case=False)
     model = T5EncoderModel.from_pretrained("prot_t5_xl_uniref50")
     gc.collect()
-    print(torch.cuda.is_available())
-    # 'cuda:0' if torch.cuda.is_available() else
-    device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
-    model = model.to(device)
+
+    # Use this instead:
+    if torch.cuda.is_available():
+        device = torch.device("cuda:0")  # Use the first GPU if available
+        print(f"Using GPU: {torch.cuda.get_device_name(0)}")
+    else:
+        device = torch.device("cpu")
+        print("CUDA not available, using CPU instead")
+
+    try:
+        model = model.to(device)
+    except RuntimeError as e:
+        print("Error moving model to GPU. Falling back to CPU.")
+        device = torch.device("cpu")
+        model = model.to(device)
+    
     model = model.eval()
     features = []
     for i in range(len(sequences_Example)):
@@ -121,7 +141,7 @@ def Kcat_predict(Ifeature, Label, sequence_new, Smiles_new, ECNumber_new, Organi
 
 if __name__ == '__main__':
     # Dataset Load
-    with open('Kcat_combination_0918_wildtype_mutant.json', 'r') as file:
+    with open('./datasets/Kcat_combination_0918_wildtype_mutant.json', 'r') as file:
         datasets = json.load(file)
     # print(len(datasets))
     sequence = [data['Sequence'] for data in datasets]

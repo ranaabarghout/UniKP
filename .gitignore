@@ -1,0 +1,10 @@
+prot_t5_xl_uniref50.zip
+prot_t5_xl_uniref50/tokenizer_config.json
+prot_t5_xl_uniref50/config.json
+prot_t5_xl_uniref50/pytorch_model.bin
+prot_t5_xl_uniref50/README.md
+prot_t5_xl_uniref50/special_tokens_map.json
+prot_t5_xl_uniref50/spiece.model
+UniKP20kcat.pkl
+UniKP20kcat_Km.pkl
+UniKP20Km.pkl
